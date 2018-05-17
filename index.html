@@ -1,0 +1,109 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Microbay Portfolio</title>
+  <style>
+  body {
+  background-color: #99dfff;
+}
+h1 {
+  font-family: 'Acme';font-size: 200%;
+  
+}
+ul.navBarItems {
+  list-style-type: none;
+}
+
+.navBarProjects {
+ background-color: #ffff99;
+ position: relative;
+ transform: translateX(20%) translateY(10%) rotate(20deg);
+ width: 20%;
+ height: 100%;
+}
+
+img {
+  border: 4mm ridge linen;
+}
+
+.navBarSocial {
+ background-color: #bbff99;
+ position: relative;
+ visibility: visible;
+ transform: translateX(200%) translateY(-90%);
+ width: 20%;
+ height: 100%;
+}
+
+.navBarSkills {
+ background-color: #ffe0b3;
+ position: relative;
+ transform: translateX(400%) translateY(-190%) rotate(-20deg);
+ width: 20%;
+ height: 100%;
+}
+  </style>
+  <link href='https://fonts.googleapis.com/css?family=Acme' rel='stylesheet'>
+  function clickedProjects() {
+document.getElementsByClassName('navBarProjects')[0].style.transform="translateX(200%) translateY(10%)";
+document.getElementsByClassName('navBarProjects')[0].style.zIndex="1";
+document.getElementsByClassName('navBarSocial')[0].style.transform="translateX(10%) translateY(-100%) rotate(20deg)";
+document.getElementsByClassName('navBarSocial')[0].style.zIndex="0";
+document.getElementsByClassName('navBarSkills')[0].style.transform="translateX(400%) translateY(-190%) rotate(-20deg)";
+document.getElementsByClassName('navBarSkills')[0].style.zIndex="0";
+ 
+}  
+
+function clickedNavBarSocial() {
+    document.getElementsByClassName('navBarSocial')[0].style.transform="translateX(200%) translateY(-90%)";
+    document.getElementsByClassName('navBarSocial')[0].style.zIndex="1";
+  document.getElementsByClassName('navBarProjects')[0].style.transform="translateX(20%) translateY(10%) rotate(20deg)";
+  document.getElementsByClassName('navBarProjects')[0].style.zIndex="0";
+ document.getElementsByClassName('navBarSkills')[0].style.transform="translateX(400%) translateY(-190%) rotate(-20deg)";
+document.getElementsByClassName('navBarSkills')[0].style.zIndex="0";
+  
+}
+function clickedNavBarSkills() {
+    document.getElementsByClassName('navBarSkills')[0].style.transform="translateX(200%) translateY(-90%)";
+    document.getElementsByClassName('navBarSkills')[0].style.zIndex="1";
+  document.getElementsByClassName('navBarSocial')[0].style.transform="translateX(20%) translateY(10%) rotate(20deg)";
+  document.getElementsByClassName('navBarSocial')[0].style.zIndex="0";
+ document.getElementsByClassName('navBarProjects')[0].style.transform="translateX(400%) translateY(110%) rotate(-20deg)";
+document.getElementsByClassName('navBarProjects')[0].style.zIndex="0";
+  
+}
+  </head>
+  
+  <body>
+<nav class="navBarProjects" onclick="clickedProjects()">
+    <img class="projectImage" src="https://github.com/dverdin83/Education/blob/master/microbayPlaceholderImage.png?raw=true">
+<ul class="navBarItems">
+  <h1>Projects</h1>
+  <li>ProjectOne</li>
+  <li>ProjectTwo</li>
+  <li>ProjectThree</i>
+</ul>
+</nav>
+
+<nav class="navBarSocial" onclick="clickedNavBarSocial()">
+    <img src="https://github.com/dverdin83/Education/blob/master/microbayPlaceholderImage.png?raw=true">
+<ul class="navBarItems">
+  <h1>Social</h1>
+  <li>GitHub</li>
+  <li>Twitter</li>
+  <li>freeCodeCamp</i>
+</ul>
+</nav>
+
+<nav class="navBarSkills" onclick="clickedNavBarSkills()">
+    <img src="https://github.com/dverdin83/Education/blob/master/microbayPlaceholderImage.png?raw=true">
+<ul class="navBarItems">
+  <h1>Skills</h1>
+  <li>HTML</li>
+  <li>CSS</li>
+  <li>Javascript</i>
+</ul>
+</nav>
+  </body>
+</html>
+
