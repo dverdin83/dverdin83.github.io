@@ -45,14 +45,14 @@ img {
   </style>
   <link href='https://fonts.googleapis.com/css?family=Acme' rel='stylesheet'>
 <script>
-  function clickedProjects() {
+function clickedProjects() {
 document.getElementsByClassName('navBarProjects')[0].style.transform="translateX(200%) translateY(10%)";
 document.getElementsByClassName('navBarProjects')[0].style.zIndex="1";
 document.getElementsByClassName('navBarSocial')[0].style.transform="translateX(10%) translateY(-100%) rotate(20deg)";
 document.getElementsByClassName('navBarSocial')[0].style.zIndex="0";
 document.getElementsByClassName('navBarSkills')[0].style.transform="translateX(400%) translateY(-190%) rotate(-20deg)";
 document.getElementsByClassName('navBarSkills')[0].style.zIndex="0";
- 
+ window.scrollTo(0, 400);
 }  
 
 function clickedNavBarSocial() {
@@ -62,7 +62,7 @@ function clickedNavBarSocial() {
   document.getElementsByClassName('navBarProjects')[0].style.zIndex="0";
  document.getElementsByClassName('navBarSkills')[0].style.transform="translateX(400%) translateY(-190%) rotate(-20deg)";
 document.getElementsByClassName('navBarSkills')[0].style.zIndex="0";
-  
+ window.scrollTo(0, 400); 
 }
 function clickedNavBarSkills() {
     document.getElementsByClassName('navBarSkills')[0].style.transform="translateX(200%) translateY(-90%)";
@@ -71,7 +71,9 @@ function clickedNavBarSkills() {
   document.getElementsByClassName('navBarSocial')[0].style.zIndex="0";
  document.getElementsByClassName('navBarProjects')[0].style.transform="translateX(400%) translateY(110%) rotate(-20deg)";
 document.getElementsByClassName('navBarProjects')[0].style.zIndex="0";
+window.scrollTo(0, 1250);
   
+}
 }
  </script>
   </head>
