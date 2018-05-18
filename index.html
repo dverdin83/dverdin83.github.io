@@ -1,19 +1,39 @@
 <html>
   <head>
-    <meta charset="utf-8">
-    <title>Microbay Portfolio</title>
-  <style>
 body {
   background-color: #99dfff;
 }
 h1 {
-  font-family: 'Acme';font-size: 200%;
+  font-family: 'Acme';
+  font-size: 200%;
 }
 
-img.main {
+h2 {
+  font-family:'Acme'; 
+  font-size: 400%;
+  background-color:#ffe066;
+  color: #1f4e9b;
+  
+  
+}
+button:hover {
+  background-color:#99dfff;
+  border-radius: 25%;
+  border: 3px solid #1f4e9b;
+}
+.descriptions {
+  font-family: Acme;
+  background-color:#ffe066;
+  width: 50%;
+}
+
+.main {
   border: 4mm ridge linen;
-  position: absolute;
-  transform: translateX(50%) translateY(50%);
+  position: relative;
+  transform: translateX(39%) translateY(15%);
+  width: 70%;
+  height: 100;
+
 }
   
 ul.navBarItems {
@@ -85,8 +105,11 @@ window.scrollTo(0, 0);
 <ul class="navBarItems">
   <h1>Projects</h1>
   <li>ProjectOne</li>
+  <img onclick=window.scrollTo(0,600) src="https://github.com/dverdin83/dverdin83.github.io/blob/master/microbayPlaceholderImagethumb.png?raw=true">
   <li>ProjectTwo</li>
+   <img src="https://github.com/dverdin83/dverdin83.github.io/blob/master/microbayPlaceholderImagethumb.png?raw=true">
   <li>ProjectThree</i>
+   <img src="https://github.com/dverdin83/dverdin83.github.io/blob/master/microbayPlaceholderImagethumb.png?raw=true">
 </ul>
 </nav>
 
@@ -94,9 +117,14 @@ window.scrollTo(0, 0);
     
 <ul class="navBarItems">  
   <h1>Social</h1>
-  <li>GitHub</li>
-  <li>Twitter</li>
-  <li>freeCodeCamp</i>
+  <li>
+    <a href="https://github.com/dverdin83" target="_blank"><button type="button" button>GitHub</button></a>
+  </li>
+  <li>
+    <a href="https://twitter.com/dverdin83" target="_blank"><button>Twitter</button></a>
+    
+  </li>
+  <li><a href="https://www.freecodecamp.org/dverdin83" target="_blank"><button>freeCodeCamp</button></a></li>
 </ul>
 </nav>
 
@@ -108,8 +136,22 @@ window.scrollTo(0, 0);
   <li>Javascript</i>
 </ul>
 </nav>
-
-<img class='main' src="https://github.com/dverdin83/Education/blob/master/microbayPlaceholderImage.png?raw=true">
-  </body>
+<div class="main">
+  <h2>Project One Title</h2>
+    <div class="descriptions">
+   Text descriptions about project one. This is placeholder text. Lorem if you will but just plain english. If you want to know more see into the future.
+  </div>
+<img src="https://github.com/dverdin83/Education/blob/master/microbayPlaceholderImage.png?raw=true">
+  <h2>Project Two Title</h2>
+    <div class="descriptions">
+   Text descriptions about project two. This is placeholder text. Lorem if you will but just plain english. If you want to know more see into the future.
+  </div>
+<img src="https://github.com/dverdin83/Education/blob/master/microbayPlaceholderImage.png?raw=true">
+  <h2>Project Three Title</h2>
+  <div class="descriptions">
+   Text descriptions about project three. This is placeholder text. Lorem if you will but just plain english. If you want to know more see into the future.
+  </div>
+  <img src="https://github.com/dverdin83/Education/blob/master/microbayPlaceholderImage.png?raw=true">
+</div>
+</body>
 </html>
-
