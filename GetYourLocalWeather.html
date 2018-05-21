@@ -41,7 +41,7 @@ function clickedGetWeather() {
     		console.log(streetViewURL);
     		$("div.locationDisplay").text(parsedWeatherData.name + ", " + parsedWeatherData.sys.country);
     		$("div.weatherDisplay").replaceWith("<div class=\"weatherDisplay\">" + parsedWeatherData.weather[0].description + "<img src=" +  weatherIconURL + "></div>");
-    		$("div.weatherTemp").text(Math.round(parsedWeatherData.main.temp) + " C");
+    		$("div.weatherTemp").html(Math.round(parsedWeatherData.main.temp) + " C" + "&deg;");
     		$("div.streetView").replaceWith("<img src=" + streetViewURL + ">");
     		if (tempC >= 32) {
     			$("div.container-fluid").css("background-color", "#ff3300");
@@ -90,12 +90,12 @@ jQuery(document).ready(function() {
 	clickedGetWeather();
 });
 function clickedC() {
-$("div.weatherTemp").html( Math.round(tempC) + " C");
+$("div.weatherTemp").html( Math.round(tempC) + " C" + "&deg;");
 console.log(tempC);
 }
 
 function clickedF() {
-	$("div.weatherTemp").html(Math.round(tempC*1.8+32) + " F");
+	$("div.weatherTemp").html(Math.round(tempC*1.8+32) + " F" + "&deg;");
 	console.log(tempC);
 }
 
