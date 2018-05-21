@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ <script>
+ 	  var currentLatitude;
+      var currentLongitude;
+      var parsedWeatherData;
+      var tempC = 5;
+      var weatherIconURL;
+
+
+function clickedGetWeather() {
+
+  if (navigator.geolocation) {
+
+      
+
+    navigator.geolocation.getCurrentPosition(function(position) {
+             currentLatitude = position.coords.latitude;
+            currentLongitude = position.coords.longitude;
+           var getrequestURL = "https://fcc-weather-api.glitch.me/api/current?lat=" + position.coords.latitude + "&lon=" + position.coords.longitude;
+   
+    var xhttp = new XMLHttpRequest();
+ 
+    
+    xhttp.onreadystatechange = function() {
+    	
+    	if (this.readyState == 4 && this.status == 200) {
+    		console.log(JSON.parse(xhttp.response));
+    		parsedWeatherData = JSON.parse(xhttp.response);
+    		tempC = parsedWeatherData.main.temp;
+    		weatherIconURL = JSON.stringify(parsedWeatherData.weather[0].icon);
+    		console.log(weatherIconURL);
+    		
+    		$("div.locationDisplay").text(parsedWeatherData.name + ", " + parsedWeatherData.sys.country);
+    		$("div.weatherDisplay").replaceWith("<div class=\"weatherDisplay\">" + parsedWeatherData.weather[0].description + "<img src=" +  weatherIconURL + "></div>");
+    		$("div.weatherTemp").text(Math.round(parsedWeatherData.main.temp) + " C");
+    		
+    		if (tempC >= 32) {
+    			$("div.container-fluid").css("background-color", "#ff3300");
+    			$("div.locationDisplay").text("It's very hot in "+ parsedWeatherData.name + ", " + parsedWeatherData.sys.country);
+    			
+    		}
+    		else if (tempC >= 25) {
+    			$("div.container-fluid").css("background-color", "#ffa64d");
+    			$("div.locationDisplay").text("It's somewhat hot in "+ parsedWeatherData.name + ", " + parsedWeatherData.sys.country);
+    		}
+    		else if (tempC >= 15) {
+    			$("div.container-fluid").css("background-color", "#ffeb99");
+    			$("div.locationDisplay").text("The temperature is not too bad in " + parsedWeatherData.name + ", " + parsedWeatherData.sys.country);
+    		}
+    		else if (tempC >= 6) {
+    			$("div.container-fluid").css("background-color", "#80bfff");
+    		    $("div.locationDisplay").text("It's a bit cold in " + parsedWeatherData.name + ", " + parsedWeatherData.sys.country);
+    		}
+    		else if (tempC <= 5) {
+    			$("div.container-fluid").css("background-color", "#004f99");
+    			$("div.locationDisplay").text("It's very cold in " + parsedWeatherData.name + ", " + parsedWeatherData.sys.country);
+    		}
+    	     else {}
+    		
+    		console.log(parsedWeatherData.weather[0].main);
+    	
+    	}
+
+    };
+        xhttp.open("GET", getrequestURL + + new Date().getTime(), true);
+    	xhttp.send();
+    
+    
+    //$.getJSON(getrequestURL), function(response) {
+     // var weatherData = JSON.parse(response.responseText);
+     // console.log(weatherData);
+      
+    //};
+    
+
+    });
+  };
+
+}
+
+function clickedC() {
+$("div.weatherTemp").html( Math.round(tempC) + " C");
+console.log(tempC);
+}
+
+function clickedF() {
+	$("div.weatherTemp").html(Math.round(tempC*1.8+32) + " F");
+	console.log(tempC);
+}
+
+
+</script> 
+<title>Get Your Local Weather</title>
+</head>
+<style>
+.container-fluid {
+  background-color: #ffeb99;
+  margin-top: 5%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  display: 100%;
+}
+</style>
+<body>
+	<div class="container-fluid">
+
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>Get Your Local Weather</h1>
+    </div>
+  </div>
+  <div class="row">
+        <div class="col-xs-12">
+        	<h2>
+          <div class="locationDisplay">
+         Just click the get location button!
+          </div></h2>    
+        </div>
+  </div>
+  <div class="row"> 
+        <div class="col-xs-12">
+        	<h3>
+            <div class="weatherDisplay">
+          
+          </div>
+          <div class="weatherTemp"></div>
+           </h3>
+        </div>    
+        
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+    <button type="button" class="btn-lg btn-info" id="getLocation" onclick="clickedGetWeather()">Get Location</button>
+    <button type="button" class="btn-lg btn-info" id="getC" onclick="clickedC()">C</button>
+    <button type="button" class="btn-lg btn-info" id="getF" onclick="clickedF()">F</button>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
