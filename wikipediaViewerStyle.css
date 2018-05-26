@@ -6,7 +6,11 @@ body {
 .container-fluid {
   background-color: #FFEB99;
   margin-top: 2%;
-  margin-left: 5%;
-  margin-right: 5%;
-  display: 100%;
+  margin-left: 2%;
+  margin-right: 2%;
+  display: 50%;
+}
+
+.iframe {
+  border= none;
 }
