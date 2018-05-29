@@ -4,10 +4,11 @@
 <head>
   <title>Microbay Wikipedia Viewer</title>
   <meta charset="utf-8">
-  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+  <meta name="viewport" content="width-device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="wikipediaViewerStyle.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 
 
 
@@ -17,33 +18,65 @@
   <nav class="navbar navbar-default">
     <div class="container-fluid">
 
-      <div class="navbar-header">
-        <a class="navbar-brand" href="index.html">Microbay Wiki View</a>
-      </div>
 
 
       <div class="navbar" name="Menu">
 
-        <form name="#searchform" class="navbar-form navbar-left">
-          <div class="form-group">
-            <input type="text" required class="form-control" name="#SearchString" placeholder="Search for articles...">
+        <ul class="nav navbar-tabs nav-justified">
+          <li class="active">
+            <form id="searchform" action: "" method="" class="navbar-form">
 
-            <button type="submit" class="btn btn-info">Search</button>
-          </div>
-        </form>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="https://en.wikipedia.org/wiki/Special:Random" target="#mainFrame">Random Article</a></li>
+              <input type="text" required class="form-control" id="searchString" placeholder=" Welcome To Wiki View">
 
+              <button id="search-button" type="submit" class="btn btn-info">Search</button>
+
+            </form>
+          </li>
+
+            <li>
+              <a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank">Random Article</a>
+            </li>
         </ul>
 
+
       </div>
-    </div>
   </nav>
-<div class "row">
-  <div class="embed-responsive embed-responsive-16by9">
-  <iframe class="embed-responsive-item" name="#mainFrame" height="100%" width="100%" position="absolute"></iframe>
+  <div class="container-fluid">
+  <h2 id="searchTitle">Welcome to Microbay Wiki View!</h2>
+
+<p id="introSentence">This viewer will show the top 3 results in wikipedia that you search!</p>
+<button class="collapsible" id="resultOneTitle">Open Section 1</button>
+<div class="content" id="resultOneContent">
+
 </div>
+<button class="collapsible" id="resultTwoTitle">Open Section 2</button>
+<div class="content" id="resultTwoContent">
+  <p></p>
 </div>
+<button class="collapsible" id="resultThreeTitle">Open Section 3</button>
+<div class="content" id="resultThreeContent">
+  <p></p>
+</div>
+<div id="linkOne"></div>
+<div id="linkTwo"></div>
+<div id="linkThree"></div>
+</div>
+
+<script>  var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+  });
+}
+</script>
 
 </body>
 <script type="text/javascript" src="wikiViewerScript.js"></script>
