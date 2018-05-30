@@ -92,14 +92,14 @@ function buildTwitchViewer() {
   console.log(userRowIds);
   for(i=0;i < userListings.length; i++) {
    if (userListings[i][1] === 1) {
-     statusMessage = "is on live right now!"
+     statusMessage = "is on <mark>live right now!</mark>"
    }
    else {
      statusMessage = "is not broadcasting at the moment."
    }
-$(userRowIds[i]).append("<div class=\"col-xs-12\">" + userListings[i][2] + " " + statusMessage +"Check out </div>");
-$(userRowIds[i]).append("<div class=\"col-xs-12\"><img height=\"200\" width=\"200\"id=\"user" + i + "Image\" src=\"" + userListings[i][3] + "\"></div>");
-$(userRowIds[i]).append("<div class=\"col-xs-12\">"+ userListings[i][4] +"</div>");
+$(userRowIds[i]).append("<div class=\"col-xs-4\">" + userListings[i][2] + " " + statusMessage +"</div>");
+$(userRowIds[i]).append("<div class=\"col-xs-4\"><img height=\"200\" width=\"200\"id=\"user" + i + "Image\" src=\"" + userListings[i][3] + "\"></div>");
+$(userRowIds[i]).append("<div class=\"col-xs-4\">"+ userListings[i][4] +"</div>");
 
 
 
