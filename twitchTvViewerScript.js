@@ -60,6 +60,9 @@ $.ajax({
       console.log(response.data[i].user_id);
       if ( response.data[i].user_id == userListings[x][0]) {
         userListings[x][1] = 1;
+        userListings[x].push(response.data[i].viewer_count);
+        userListings[x].push(response.data[i].title);
+
       }
 
     }
@@ -92,14 +95,14 @@ function buildTwitchViewer() {
   console.log(userRowIds);
   for(i=0;i < userListings.length; i++) {
    if (userListings[i][1] === 1) {
-     statusMessage = "is on <mark>live right now!</mark>"
+     statusMessage = "is on <mark>live right now!</mark> Broadcasting " + userListings[i][7] + " with " + userListings[i][6] + " viewers watching.";
    }
    else {
      statusMessage = "is not broadcasting at the moment."
    }
 $(userRowIds[i]).append("<div class=\"col-xs-12\">" + "<a href=\"https://www.twitch.tv/" + userListings[i][2] + "\" target=\"_blank\">" + userListings[i][2] + "</a> " + statusMessage +"</div>");
 $(userRowIds[i]).append("<div class=\"col-xs-12\"><img height=\"200\" width=\"200\"id=\"user" + i + "Image\" src=\"" + userListings[i][3] + "\"></div>");
-$(userRowIds[i]).append("<div class=\"col-xs-12\">"+ userListings[i][4] +"</div>");
+$(userRowIds[i]).append("<div class=\"col-xs-12\">"+ userListings[i][4] + "<br>" + userListings[i][2] + " has had a lifetime total of " + userListings[i][5] + " unique viewers.</div>");
 
 
 
