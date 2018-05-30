@@ -13,6 +13,7 @@ body {
 
 .row {
   border-color:"#3F7FBF"
-  padding: 10px;
+  border-width: "normal";
+  padding: 20px;
   font-family: cursive;
 }
