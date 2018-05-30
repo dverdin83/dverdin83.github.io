@@ -97,9 +97,9 @@ function buildTwitchViewer() {
    else {
      statusMessage = "is not broadcasting at the moment."
    }
-      $(userRowIds[i]).append("<div class=\"col-xs-4\">" + userListings[i][2] + " " + statusMessage + "<p>"+userListings[i][4]+"</p></div>");
-      $(userRowIds[i]).append("<div class=\"col-xs-4\"><img id=\"user" + i + "Image\" src=\"" + userListings[i][3] + "\"></div>");
-      $(userRowIds[i]).append("<div class=\"col-xs-4\"><iframe frameborder=\"0\" scrolling=\"no\" src=\"http://player.twitch.tv/?" + userListings[i][2] + "\" height=\"400\" width=\"300\"></iframe></div>");
+$(userRowIds[i]).append("<div class=\"col-xs-4\"><img height=\"50\" width=\"50\"id=\"user" + i + "Image\" src=\"" + userListings[i][3] + "\"></div>");
+$(userRowIds[i]).append("<div class=\"col-xs-4\">"+ userListings[i][4] +"</div>");
+$(userRowIds[i]).append("<div class=\"col-xs-4\">" + userListings[i][2] + " " + statusMessage +"Check out </div>");
 
 
 
