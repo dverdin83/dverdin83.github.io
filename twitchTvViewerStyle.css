@@ -1,0 +1,16 @@
+body {
+  background-color: #3F7FBF;
+
+}
+
+.container-fluid {
+  background-color: #FFEB99;
+  margin-top: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
+  display: 100%;
+}
+
+.row {
+  font-size: medium;
+}
