@@ -15,13 +15,17 @@
    #sun {
     background: linear-gradient(yellow, orange, yellow, orange);
     top: 50%;
-    width: 200px;
-    height: 200px;
+    width: 175px;
+    height: 175px;
     border-radius: 50%;
     margin: auto;
     position: absolute;
     top: 50%;
     left: 50%;
+    z-index: 1;
+    animation-name: hotSun;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
 
    }
 
@@ -34,7 +38,11 @@
      z-index: 1;
      position: absolute;
      top: 50%;
-     left: 25%
+     left: 25%;
+     animation-name: earthAroundTheSun;
+     animation-duration: 60s;
+     animation-timing-function: linear;
+     animation-iteration-count: infinite;
 
    }
 
@@ -44,46 +52,102 @@
      height: 50px;
      border-radius: 50%;
      animation-name: moonAroundTheEarth;
-     animation-duration: 20s;
+     animation-duration: 60s;
      animation-iteration-count: infinite;
      position: absolute;
      top: 50%;
      left: 35%;
    }
 
-   @keyframes moonAroundTheEarth {
-     0% {
-        z-index: 0;
-     }
-     25% {
-        left: 15%;
-        z-index: 2;
-     35% {
-        z-index: 2;
-     }
-     100% {
-       z-index: 0;
-        left: 15%;
-     }
-   }
-
-   terranSecondarySystem{
+   #terranSecondarySystem {
      animation-name: terranSecondarySystemAroundTheSun;
      animation duration: 60s;
      animation-iteration-count: infinite;
      position: absolute;
 
+     height: 200px;
+     width: 10px;
+     left: 25%;
+     top: 50%;
+     z-index: 5;
+     background: grey;
    }
 
-   @keyframes terranSecondarySystemAroundTheSun {
+
+
+
+   @keyframes moonAroundTheEarth {
      0% {
-       z-index: 1;
-       left: 200px;
+        z-index: 2;
+     }
+     25% {
+        left: 100%;
+        z-index: -1;
+      }
+     50% {
+       height: 1px;
+       width: 1px;
+        z-index: -1;
+        left: -100%;
+     75% {
+       background: black;
+       height: 1px;
+       width: 1px;
+       z-index: 0;
+     }
+     90% {
+       height: 5px;
+       width: 5px;
+     }
      }
      100% {
-       left: 50%;
+       z-index: 0;
+        left: 0%;
      }
    }
+
+ @keyframes earthAroundTheSun {
+
+   25% {
+
+     left:50%;
+     z-index: 1;
+   }
+   50% {
+     background: linear-gradient(.25turn, darkblue, black, blue);
+     z-index: 1;
+     left:75%;
+   }
+    75% {
+      z-index: 0;
+      height: 5px;
+      width: 5px;
+      background-color: linear-gradient(.25turn grey, blue, black);
+    }
+
+   100% {
+     z-index: 2;
+     left: 25%;
+    }
+ }
+ @keyframes hotSun {
+   0% {
+     background: linear-gradient(yellow, orange, yellow, orange);
+   }
+   25% {
+     background: linear-gradient(.25turn, red, orange, orange, yellow);
+   }
+   50% {
+     background: linear-gradient(.50turn, white, yellow, orange);
+   }
+   75% {
+     background: linear-gradient(.75turn yellow, red, yellow, orange);
+   }
+   100% {
+     background: linear-gradient(.25turn yellow, orange, yellow, red);
+   }
+ }
+
 
 
 
@@ -91,10 +155,12 @@
   <body>
    <div id='solarSysten'>
   <div id='sun'></div>
-  <div id='terranSecondarySystem'>
-    <div id='earth'></div>
+
+    <div id='earth'>
     <div id='moon'></div>
   </div>
+
+
 </div>
   </body>
 </html>
