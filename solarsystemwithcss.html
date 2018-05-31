@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Microbay Solar System With CSS</title>
+  </head>
+  <style>
+   body {
+     background-color: black;
+   }
+   #solarSystem {
+
+   }
+
+   #sun {
+    background: linear-gradient(yellow, orange, yellow, orange);
+    top: 50%;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+   }
+
+   #earth {
+     background: linear-gradient(0.25turn, black, blue, grey);
+     width: 100px;
+     height: 100px;
+     border-radius: 50%;
+     margin: auto;
+     z-index: 1;
+     position: fixed;
+     top: 55%;
+     left: 25%;
+
+   }
+
+   #moon {
+     background: linear-gradient(.25turn, black, grey, white);
+     width: 50px;
+     height: 50px;
+     border-radius: 50%;
+     animation-name: moonAroundTheEarth;
+     animation-duration: 20s;
+     animation-iteration-count: infinite;
+     position: relative;
+     top: 300px;
+     left: 35%;
+   }
+
+   @keyframes moonAroundTheEarth {
+     0% {
+        z-index: 0;
+     }
+     25% {
+        left: 15%;
+        z-index: 2;
+     35% {
+        z-index: 2;
+     }
+     100% {
+       z-index: 0;
+        left: 15%;
+     }
+   }
+
+   terranSecondarySystem{
+     animation-name: terranSecondarySystemAroundTheSun;
+     animation duration 60s;
+     animation-iteration-count: infinite;
+     position: relative;
+
+   }
+
+   @keyframes terranSecondarySystemAroundTheSun {
+     0% {
+       z-index: 1;
+       left: 200px;
+     }
+     100% {
+       left: 50%;
+     }
+   }
+
+
+
+  </style>
+  <body>
+   <div id='solarSysten'>
+  <div id='sun'></div>
+  <div id='terranSecondarySystem'>
+    <div id='earth'></div>
+    <div id='moon'></div>
+  </div>
+</div>
+  </body>
+</html>
