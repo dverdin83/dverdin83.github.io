@@ -13,18 +13,17 @@
    }
 
    #sun {
-    background: linear-gradient(yellow, orange, yellow, orange);
-    top: 50%;
-    width: 175px;
-    height: 175px;
+    background: linear-gradient(1deg, yellow, orange, yellow, orange);
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
-    margin: auto;
     position: absolute;
     top: 50%;
     left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 1;
     animation-name: hotSun;
-    animation-duration: 1s;
+    animation-duration: 1.5s;
     animation-iteration-count: infinite;
 
    }
@@ -34,13 +33,13 @@
      width: 100px;
      height: 100px;
      border-radius: 50%;
-     margin: auto;
-     z-index: 1;
+     z-index: 2;
      position: absolute;
      top: 50%;
-     left: 25%;
+     left: 50%;
+     transform: translate(-50%, -50%);
      animation-name: earthAroundTheSun;
-     animation-duration: 60s;
+     animation-duration: 10s;
      animation-timing-function: linear;
      animation-iteration-count: infinite;
 
@@ -48,15 +47,17 @@
 
    #moon {
      background: linear-gradient(.25turn, black, grey, white);
-     width: 50px;
-     height: 50px;
+     width: 25px;
+     height: 25px;
      border-radius: 50%;
      animation-name: moonAroundTheEarth;
-     animation-duration: 60s;
+     animation-duration: 10s;
      animation-iteration-count: infinite;
      position: absolute;
      top: 50%;
-     left: 35%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     z-index: 3;
    }
 
    #terranSecondarySystem {
@@ -78,75 +79,126 @@
 
    @keyframes moonAroundTheEarth {
      0% {
-        z-index: 2;
+       width: 25px;
+       height: 25px;
+       z-index: 3;
+       top: 50%;
+       left: 50%;
+       transform: translate(-50%, -50%);
      }
      25% {
-        left: 100%;
-        z-index: -1;
+       width: 12.5px;
+       height: 12.5px;
+       z-index: 2;
+       top: 50%;
+       left: 75%;
+       margin-left: 25px;
+       transform: translate(-50%, -50%);
+     }
+   50% {
+       width: 0px;
+       height: 0px;
+       background: linear-gradient(.25turn, darkblue, black, blue);
+       z-index: 0;
+       top: 50%;
+       left: 50%;
+       transform: translate(-50%, -50%);
+     }
+    75% {
+        z-index: 2;
+        height: 12.5px;
+        width: 12.5px;
+        background-color: linear-gradient(.25turn grey, blue, black);
+        top: 50%;
+        left: 25%;
+        margin-left: -25px;
+        transform: translate(-50%, -50%);
       }
-     50% {
-       height: 1px;
-       width: 1px;
-        z-index: -1;
-        left: -100%;
-     75% {
-       background: black;
-       height: 1px;
-       width: 1px;
-       z-index: 0;
-     }
-     90% {
-       height: 5px;
-       width: 5px;
-     }
-     }
-     100% {
-       z-index: 0;
-        left: 0%;
-     }
+  100% {
+       width: 25px;
+       height: 25px;
+       z-index: 3;
+       top: 50%;
+       left: 50%;
+       transform: translate(-50%, -50%);
+      }
    }
 
  @keyframes earthAroundTheSun {
 
-   25% {
-
-     left:50%;
-     z-index: 1;
-   }
-   50% {
-     background: linear-gradient(.25turn, darkblue, black, blue);
-     z-index: 1;
-     left:75%;
-   }
-    75% {
-      z-index: 0;
-      height: 5px;
-      width: 5px;
-      background-color: linear-gradient(.25turn grey, blue, black);
-    }
-
-   100% {
+   0% {
+     width: 100px;
+     height: 100px;
      z-index: 2;
-     left: 25%;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+   }
+   25% {
+     width: 50px;
+     height: 50px;
+     z-index: 0;
+     top: 50%;
+     left: 75%;
+     margin-left: 75px;
+     transform: translate(-50%, -50%);
+   }
+ 50% {
+     width: 0px;
+     height: 0px;
+     background: linear-gradient(.25turn, darkblue, black, blue);
+     z-index: 0;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+   }
+  75% {
+      z-index: 0;
+      height: 50px;
+      width: 50px;
+      background-color: linear-gradient(.25turn grey, blue, black);
+      top: 50%;
+      left: 25%;
+      margin-left: -75px;
+      transform: translate(-50%, -50%);
+    }
+100% {
+     width: 100px;
+     height: 100px;
+     z-index: 2;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
     }
  }
  @keyframes hotSun {
    0% {
-     background: linear-gradient(yellow, orange, yellow, orange);
-   }
-   25% {
-     background: linear-gradient(.25turn, red, orange, orange, yellow);
+     background: linear-gradient(yellow 0%, orange 20%, yellow 40%. orange 60%, yellow 80%, orange 100%);
    }
    50% {
-     background: linear-gradient(.50turn, white, yellow, orange);
-   }
-   75% {
-     background: linear-gradient(.75turn yellow, red, yellow, orange);
+     background: linear-gradient(yellow 10%, orange 30%, yellow 50%. orange 70%, yellow 90%);
    }
    100% {
-     background: linear-gradient(.25turn yellow, orange, yellow, red);
+      background: linear-gradient(orange 0%, yellow 20%, orange 40%, yellow 60%, orange 80%, yellow 100%);
    }
  }
+
+
+
+
+  </style>
+  <body>
+   <div id='solarSysten'>
+  <div id='sun'></div>
+
+    <div id='earth'>
+    <div id='moon'></div>
+  </div>
+
+
+</div>
+  </body>
+</html>
 
 
 
