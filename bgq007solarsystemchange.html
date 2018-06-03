@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Microbay Solar System With CSS</title>
+  </head>
+  <style>
+   body {
+     background-color: black;
+   }
+   #solarSystem {
+   }
+   #sun {
+    background: linear-gradient(1deg, yellow, orange, yellow, orange);
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    animation-name: hotSun;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+   }
+   #earth {
+     background: linear-gradient(0.25turn, black, blue, grey);
+     width: 100px;
+     height: 100px;
+     border-radius: 50%;
+     z-index: 2;
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     animation-name: earthAroundTheSun;
+     animation-duration: 10s;
+     animation-timing-function: linear;
+     animation-iteration-count: infinite;
+   }
+   #moon {
+     background: linear-gradient(.25turn, black, grey, white);
+     width: 25px;
+     height: 25px;
+     border-radius: 50%;
+     animation-name: moonAroundTheEarth;
+     animation-duration: 10s;
+     animation-iteration-count: infinite;
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     z-index: 3;
+   }
+   #terranSecondarySystem {
+     animation-name: terranSecondarySystemAroundTheSun;
+     animation duration: 60s;
+     animation-iteration-count: infinite;
+     position: absolute;
+     height: 200px;
+     width: 10px;
+     left: 25%;
+     top: 50%;
+     z-index: 5;
+     background: grey;
+   }
+   @keyframes moonAroundTheEarth {
+     0% {
+       width: 25px;
+       height: 25px;
+       z-index: 3;
+       top: 50%;
+       left: 50%;
+       transform: translate(-50%, -50%);
+     }
+     25% {
+       width: 12.5px;
+       height: 12.5px;
+       z-index: 2;
+       top: 50%;
+       left: 75%;
+       margin-left: 25px;
+       transform: translate(-50%, -50%);
+     }
+   50% {
+       width: 0px;
+       height: 0px;
+       background: linear-gradient(.25turn, darkblue, black, blue);
+       z-index: 0;
+       top: 50%;
+       left: 50%;
+       transform: translate(-50%, -50%);
+     }
+    75% {
+        z-index: 2;
+        height: 12.5px;
+        width: 12.5px;
+        background-color: linear-gradient(.25turn grey, blue, black);
+        top: 50%;
+        left: 25%;
+        margin-left: -25px;
+        transform: translate(-50%, -50%);
+      }
+  100% {
+       width: 25px;
+       height: 25px;
+       z-index: 3;
+       top: 50%;
+       left: 50%;
+       transform: translate(-50%, -50%);
+      }
+   }
+ @keyframes earthAroundTheSun {
+   0% {
+     width: 100px;
+     height: 100px;
+     z-index: 2;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+   }
+   25% {
+     width: 50px;
+     height: 50px;
+     z-index: 0;
+     top: 50%;
+     left: 75%;
+     margin-left: 75px;
+     transform: translate(-50%, -50%);
+   }
+ 50% {
+     width: 0px;
+     height: 0px;
+     background: linear-gradient(.25turn, darkblue, black, blue);
+     z-index: 0;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+   }
+  75% {
+      z-index: 0;
+      height: 50px;
+      width: 50px;
+      background-color: linear-gradient(.25turn grey, blue, black);
+      top: 50%;
+      left: 25%;
+      margin-left: -75px;
+      transform: translate(-50%, -50%);
+    }
+100% {
+     width: 100px;
+     height: 100px;
+     z-index: 2;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+    }
+ }
+ @keyframes hotSun {
+   0% {
+     background: linear-gradient(yellow 0%, orange 20%, yellow 40%. orange 60%, yellow 80%, orange 100%);
+   }
+   50% {
+     background: linear-gradient(yellow 10%, orange 30%, yellow 50%. orange 70%, yellow 90%);
+   }
+   100% {
+      background: linear-gradient(orange 0%, yellow 20%, orange 40%, yellow 60%, orange 80%, yellow 100%);
+   }
+ }
+  </style>
+  <body>
+   <div id='solarSysten'>
+  <div id='sun'></div>
+
+    <div id='earth'>
+    <div id='moon'></div>
+  </div>
+
+
+</div>
+  </body>
+</html>
+
+
+
+
+  </style>
+  <body>
+   <div id='solarSysten'>
+  <div id='sun'></div>
+
+    <div id='earth'>
+    <div id='moon'></div>
+  </div>
+
+
+</div>
+  </body>
+</html>
