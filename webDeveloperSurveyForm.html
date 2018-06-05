@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  <meta charset="utf-8">
+  <title>Web Developer Survey Form</title>
+</head>
+<style>
+  body {
+    font-family: helvetica;
+    background-color: #3F7FBF;
+  }
+
+  #container {
+    background: #FFEB99;
+    text-align: center;
+    margin: auto;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 2%;
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  #survey-form {
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width:80%;
+  }
+
+  #description {
+    margin: auto;
+    width: 80%;
+
+  }
+  #contactEmploymentData {
+    text-align: right;
+  }
+  #contactInfo {
+   text-align: justify;
+  }
+
+
+  #employementStatusRadioGroup {
+    margin: auto;
+    margin-right: 10%;
+  }
+
+  #checkBoxItems {
+    display: flex;
+    flex-direction: row;
+  }
+
+  #additionalComments {
+    width: 100%;
+    height: 100%;
+  }
+  textarea {
+    resize: none;
+    width: 100%;
+    height: 100%;
+  }
+
+  #submit {
+    width: 100%;
+    height: 20%;
+    color: #3F7FBF;
+    background-color: lightgreen;
+  }
+
+
+
+  .formHeadings {
+    text-align: center;
+  }
+</style>
+
+<body>
+  <div id="container" class="container">
+    <header id="header">
+      <h1 id="title">Developer Survey Form</h1>
+      <p id="description">This survey form's purpose is to query web developers at all stages from new student to those already employed in the industry. It's a way for me to get to know my audience.</p>
+      <hr>
+    </header>
+    <form id="survey-form" action="mailto:dverdin83@gmail.com" method="post" enctype="text/plain">
+      <div id="contactEmploymentData">
+
+        <fieldset id="contactInfo">
+          <legend class="formHeadings">Contact Information</legend>
+          <div id="nameDiv">
+            <label id="name-label" for="name">Name:</label>
+            <input id="name" type="text" name="name" minlength="5" maxlength="25" size="25" inputmode="text" autocomplete="name" placeholder="Enter Name Here" autofocus required>
+          </div>
+          <div id="emailDiv">
+            <label id="email-label" for="email">E-Mail:</label>
+            <input id="email" type="email" name="email" type="email" minlength="5" size="25" inputmode="email" autocomplete="email" placeholder="Enter Email Here" required>
+          </div>
+        </fieldset>
+
+      <fieldset id="employementStatusRadioGroup">
+          <legend class="formHeadings">Employment Status</legend>
+            <div id="studentRadioChoice">
+            <label id="studentChoice-label" for="studentChoice">Student</label>
+            <input type="radio" id="studentChoice" name="employmentStatus" value="Student" required>
+         </div>
+            <div id="freelancerRadioChoice">
+            <label id="freelancerChoice-label" for="freelancerChoice">Freelancer</label>
+            <input type="radio" id="freelancerChoice" name="employmentStatus" value="Freelancer">
+            </div>
+
+            <div id="startupRadioChoice">
+            <label id="startupChoice-label" for="startupChoice">Startup Member</label>
+            <input type="radio" id="startupChoice" name="employementStatus" value="Startup">
+            </div>
+            <div id="employeeRadioChoice">
+            <label id="employeeChoice-label" for="employee" id="employeeChoice">Employee</label>
+            <input type="radio" id="employeeChoice" name="employmentStatus" value="Employee">
+            </div>
+          <select id="dropdown" name="specialization" required>
+              <option value="" disabled selected>Select Specialization</option>
+              <option value="Front-End Development">Front-End Development</option>
+              <option value="Back-End Development">Back-End Development</option>
+              <option value="Full-Stack Development">Full-Stack Development</option>
+          </select>
+        </fieldset>
+      </div>
+      <fieldset id="educationTrainingdata">
+        <legend class="formHeadings">Education and Interests</legend>
+        <div id="fccParticipantRadioDiv">
+          <label id="NewtoFCC-label" for="newToFCCChoice">New to FCC</label>
+          <input type="radio" id="newToFCCChoice" name="FCCParticipation" value="New to FCC">
+          <label id="currentUser-label" for="currentUserChoice">Current FCC User</label>
+          <input type="radio" id="currentUserChoice" name="FCCParticipation" value="Current FCC User">
+        </div>
+        <div id="FCC Certificates">
+          <label id="number-label" for="number"># Of FCC Certificates: </label>
+          <input id="number" name="Number Of FCC Certs"type="number" min="0" max="9" inputmode="numeric" size="3" placeholder="0-9">
+        </div>
+        <div id="dropdown">
+        </div>
+        <fieldset id="frameworkInterestCheckboxGroup">
+          <legend class="formHeadings">Framework Interests</legend>
+
+           <div id="checkboxItems">
+            <div id="reactDiv">
+              <input type="checkbox" id="ReactCheckboxInput" name="frameworkInterest" value="React">
+              <label id="react-label" name="frameworkInterest" value="React">React</label>
+            </div>
+            <div id="JQueryDiv">
+              <input type="checkbox" id="JQueryCheckboxInput" name="frameworkInterest" value="JQuery">
+              <label id="JQuery-label" name="frameworkInterest" value="JQuery">JQuery</label>
+            </div>
+            <div id="BootstrapDiv">
+              <input type="checkbox" id="bootstrapCheckboxInput" name="frameworkInterest" value="Bootstrap">
+              <label id="Bootstrap-label" name="frameworkInterest" value="Bootstrap">Bootstrap</label>
+            </div>
+            <div id="YiiDiv">
+              <input type="checkbox" id="YiiCheckboxInput" name="frameworkInterest" value="Yii">
+              <label id="Yii-label" name="frameworkInterest" value="Yii">Yii</label>
+            </div>
+            <div id="ZendDiv">
+              <input type="checkbox" id="ZendCheckboxInput" name="frameworkInterest" value="Zend">
+              <label id="Zend-label" name="frameworkInterest" value="Zend">Zend</label>
+            </div>
+
+
+            <div id="AngularDiv">
+              <input type="checkbox" id="AngularCheckboxInput" name="frameworkInterest" value="Angular">
+              <label id="angular-label" name="frameworkInterest" value="React">Angular</label>
+            </div>
+            <div id="RubyOnRailsDiv">
+              <input type="checkbox" id="rubyOnRailsCheckboxInput" name="frameworkInterest" value="RubyOnRails">
+              <label id="RubyOnRails-label" name="frameworkInterest" value="rubyOnRails">RoR</label>
+            </div>
+            <div id="MeteorDiv">
+              <input type="checkbox" id="bootstrapCheckboxInput" name="frameworkInterest" value="Meteor">
+              <label id="Meteor-label" name="frameworkInterest" value="Meteor">Meteor</label>
+            </div>
+            <div id="ExpressDiv">
+              <input type="checkbox" id="YiiCheckboxInput" name="frameworkInterest" value="Express">
+              <label id="express-label" name="frameworkInterest" value="Express">Express</label>
+            </div>
+            <div id="ZendDiv">
+              <input type="checkbox" id="DjangoCheckboxInput" name="frameworkInterest" value="Django">
+              <label id="Django-label" name="frameworkInterest" value="Django">Django</label>
+            </div>
+          </div>
+        </fieldset>
+      </fieldset>
+      <div id="additionalcommentsandsubmit">
+      <fieldset id="additonalComments">
+        <legend>Additional Comments</legend>
+        <textarea id="additionalComments" name="additionalComments" rows=12 placeholder="Place additional comments and experience here" form="survey-form"></textarea>
+      </fieldset>
+      <input id="submit" type="submit" value="Submit">
+    </div>
+    </form>
+
+  </div>
+</body>
+
+</html>
