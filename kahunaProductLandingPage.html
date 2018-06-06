@@ -33,6 +33,7 @@
         width: 75%;
         height: 25%;
         z-index: 9999;
+        opacity: .90;
       }
 
       #header-img {
@@ -54,9 +55,9 @@
         text-align: center;
         font-family: helvetica;
         display: flex;
-        position: absolute;
+        position: relative;
         flex-direction: column;
-        top: 40%;
+
         width: 75%;
         height: 100%;
 
@@ -73,7 +74,22 @@
        overflow-wrap: break-word;
       }
     #nav-bar {
+       width: 100%
 
+    }
+
+    @media only screen (max-width: 600px) {
+      left: 70%;
+      top: 0;
+    }
+
+
+     .target-label: before {
+    	display: block;
+     	content: " ";
+      height: 25%;      /* Give height of your fixed element */
+      margin-top: -25%; /* Give negative margin of your fixed element */
+      visibility: hidden;
     }
 
   </style>
@@ -93,13 +109,18 @@
 
     <main id="main">
 
-       <h2 id="philosophy-heading">Our Philosophy</h2>
 
-       <iframe id="video" width="534" height="396" src="https://www.youtube.com/embed/8XJKUITfiv4" frameborder="0" allow="allowfullscreen; encrypted-media"></iframe>
-       <h2 id="theMaven-heading">The Maven</h2>
-       <p id="philosophy-description">The Maven is our starter package</p>
-       <h2 id="theKahuna-heading">The Kahuna</h2>
-       <h2 id="theBigKahuna-heading">The Big Kahuna</h2>
+       <h2 class="target-label" id="philosophy-heading">Our Philosophy</h2>
+
+       <h3>The Greatest Wisdom Consists In Knowing That You Know Nothing</h3>
+       <h3>All We Are Is Dust In The Wind Dude</h3>
+       <h4>...And Bits In The Heap</h4>
+
+       <iframe id="video" width="854" height="480" src="https://www.youtube.com/embed/8XJKUITfiv4" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+       <h2 class="target-label" id="theMaven-heading">The Maven</h2>
+       <p class="target-label" id="philosophy-description">The Maven is our starter package</p>
+       <h2 class="target-label" id="theKahuna-heading">The Kahuna</h2>
+       <h2 class="target-label" id="theBigKahuna-heading">The Big Kahuna</h2>
     </main>
 
     <footer id="footer">
