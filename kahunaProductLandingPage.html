@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <meta charset="utf-8">
+    <title>Kahuna Consulting - The Technology Mavens</title>
+  </head>
+  <style>
+
+
+  body {
+    background: linen;
+
+  }
+  .nav-link {
+    border-radius: 50%;
+    background: yellow;
+    text-decoration: none;
+    padding: 10px;
+  }
+
+
+      #header {
+
+        border-top-right-radius: 50%;
+        border-bottom-right-radius: 50%;
+        display: grid;
+        position: fixed;
+        top: 0;
+        font-family: helvetica;
+        font-size: auto;
+        background: #99dfff;
+        width: 75%;
+        height: 25%;
+        z-index: 9999;
+      }
+
+      #header-img {
+        border-top-left-radius: 20%;
+        border-bottom-left-radius: 20%;
+        height: 180px;
+        width: 189px;
+      }
+      #title {
+          width:  100%;
+          height: 100%;
+      }
+      #logoAndTitle {
+        display: flex;
+        flex-direction: row;
+      }
+
+      #main {
+        text-align: center;
+        font-family: helvetica;
+        display: flex;
+        position: absolute;
+        flex-direction: column;
+        top: 40%;
+        width: 75%;
+        height: 100%;
+
+      }
+      #footer {
+       font-family: helvetica;
+       background: yellow;
+       left: 70%;
+       top:60%;
+       position: fixed;
+       bottom: 0;
+       width: 30%;
+       height: 25%;
+       overflow-wrap: break-word;
+      }
+    #nav-bar {
+
+    }
+
+  </style>
+  <body>
+    <header id="header">
+      <div id="logoAndTitle">
+      <img id="header-img" src="kahunaLogo.png">
+      <h1 id="title">Kahuna Consulting<hr>The Technology Mavens</h1>
+      </div>
+      <nav id="nav-bar">
+      <a id="philosophy-link" class="nav-link" href="#philosophy-heading" title="Learn More Our Guiding Principles"><small>Philosophy</small></a>
+      <a id="theMaven-link" class="nav-link" href="#theMaven-heading" title="Our Starter Package"><small>The Maven</small></a>
+      <a id="theKahuna-link" class="nav-link" href="#theKahuna-heading" title="Business Day Phone Suppoert 5 On-Site Visits"><medium>The Kahuna</medium></a>
+      <a id="theBigKahuna-link" class="nav-link" href="#theBigKahuna-heading" title="On-Site 24/7 Support"><large>The Big Kahuna</large></a>
+      </nav>
+    </header>
+
+    <main id="main">
+
+       <h2 id="philosophy-heading">Our Philosophy</h2>
+
+       <iframe id="video" width="50%" height="50%" src="https://www.youtube.com/embed/8XJKUITfiv4" frameborder="0" allow="allowfullscreen; encrypted-media"></iframe>
+       <h2 id="theMaven-heading">The Maven</h2>
+       <p id="philosophy-description">The Maven is our starter package</p>
+       <h2 id="theKahuna-heading">The Kahuna</h2>
+       <h2 id="theBigKahuna-heading">The Big Kahuna</h2>
+    </main>
+
+    <footer id="footer">
+
+      <form id="form" action="https.freecodecamp.com/email-submit" method="post" enctype="text/plain">
+
+        <fieldset id="signUpFieldSet">
+          <legend>Gain Technological Enlightment</legend>
+           <p>Even if you don't hire us. We send out regular bits and bytes of daily wisdom. Namaste.</p>
+          <label id="email-label" for="email">
+          <input id="email" type="email" name="email" minlength="5" size="25" inputmode="email" autocomplete="email" placeholder="Sign Up For Daily Wisdom">
+          <input id="submit" type="submit" value="Begin">
+
+        </fieldset>
+      </form>
+    </footer>
+  </body>
+</html>
