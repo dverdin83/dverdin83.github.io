@@ -3,9 +3,11 @@
   <head>
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kahuna Consulting - The Technology Mavens</title>
   </head>
   <style>
+
 
 
   body {
@@ -16,7 +18,7 @@
     border-radius: 50%;
     background: yellow;
     text-decoration: none;
-    padding: 10px;
+    padding: 5px;
   }
 
 
@@ -30,10 +32,11 @@
         font-family: helvetica;
         font-size: auto;
         background: #99dfff;
-        width: 75%;
+        width: 100%;
         height: 25%;
-        z-index: 9999;
+        z-index: 9998;
         opacity: .90;
+
       }
 
       #header-img {
@@ -53,83 +56,115 @@
 
       #main {
         text-align: center;
+        align-items: center;
         font-family: helvetica;
         display: flex;
         position: relative;
         flex-direction: column;
 
         width: 75%;
-        height: 100%;
+        height: 75%;
 
       }
       #footer {
        font-family: helvetica;
        background: yellow;
-       left: 70%;
-       top:60%;
+       left: 75%;
        position: fixed;
        bottom: 0;
-       width: 30%;
-       height: 25%;
+       width: 25%;
+       height: 10%;
        overflow-wrap: break-word;
+
       }
     #nav-bar {
-       width: 100%
+       width: 100%;
+       z-index: 9999;
 
     }
 
-    @media only screen (max-width: 600px) {
-      left: 70%;
-      top: 0;
+    .description {
+      width: 50%;
+      padding-bottom: 50px;
     }
 
+    .pricingDescription {
+      border-style: solid;
+      border-radius: 4%;
+      border-width: 4px;
+      border-color: green;
+      padding: 10px;
+      background: lightgreen;
 
-     .target-label: before {
-    	display: block;
-     	content: " ";
-      height: 25%;      /* Give height of your fixed element */
-      margin-top: -25%; /* Give negative margin of your fixed element */
-      visibility: hidden;
+
+    }
+     .spacing {
+       display: block;
+       height: 25%;
+       margin-top: 25%;
+       visibility: hidden;
+}
+
+
+
+
+    @media only screen and (max-width: 600px) {
+        #main {
+          width: 100%;
+        }
+        #footer  {
+          left: 0%;
+          bottom: 0;
+          position: relative;
+          width: 100%;
+          height: 15%
+        }
     }
 
   </style>
   <body>
-    <header id="header">
+
+    <header class="header" id="header">
       <div id="logoAndTitle">
-      <img id="header-img" src="kahunaLogo.png">
+      <img id="header-img" src="https://dverdin83.github.io/kahunaLogo.png">
       <h1 id="title">Kahuna Consulting<hr>The Technology Mavens</h1>
       </div>
       <nav id="nav-bar">
       <a id="philosophy-link" class="nav-link" href="#philosophy-heading" title="Learn More Our Guiding Principles"><small>Philosophy</small></a>
-      <a id="theMaven-link" class="nav-link" href="#theMaven-heading" title="Our Starter Package"><small>The Maven</small></a>
-      <a id="theKahuna-link" class="nav-link" href="#theKahuna-heading" title="Business Day Phone Suppoert 5 On-Site Visits"><medium>The Kahuna</medium></a>
+      <a id="theMaven-link" class="nav-link" href="#theMaven-heading" title="Our Starter Package"><small>Maven</small></a>
+      <a id="theKahuna-link" class="nav-link" href="#theKahuna-heading" title="Business Day Phone Suppoert 5 On-Site Visits"><medium>Kahuna</medium></a>
       <a id="theBigKahuna-link" class="nav-link" href="#theBigKahuna-heading" title="On-Site 24/7 Support"><large>The Big Kahuna</large></a>
       </nav>
     </header>
 
-    <main id="main">
-
-
+    <main class="main" id="main">
+       <div class="spacing"></div>
+       <div id="ourPhilosophy">
        <h2 class="target-label" id="philosophy-heading">Our Philosophy</h2>
-
        <h3>The Greatest Wisdom Consists In Knowing That You Know Nothing</h3>
        <h3>All We Are Is Dust In The Wind Dude</h3>
-       <h4>...And Bits In The Heap</h4>
-
-       <iframe id="video" width="854" height="480" src="https://www.youtube.com/embed/8XJKUITfiv4" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+       <h3>...And Bits In The Heap</h3>
+       </div>
+       <iframe id="video" width="400" height="300" src="https://www.youtube.com/embed/8XJKUITfiv4" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
        <h2 class="target-label" id="theMaven-heading">The Maven</h2>
-       <p class="target-label" id="philosophy-description">The Maven is our starter package</p>
+       <h3 class="description" id="theMaven-intro">The Maven is our starter package. If you need a little help or are not sure where to start this is a good choice.</h3>
+       <h4 class="pricingDescription">Maven Pricing<hr> 5 bananas per call <hr> 3 coconuts per visit<hr></h4>
        <h2 class="target-label" id="theKahuna-heading">The Kahuna</h2>
+       <h3 class="description" id="theKahuna-intro">If your going to need ongoing support during normal business hours, then this is the package for you!</h3>
+       <h4 class="pricingDescription">Kahuna Pricing<hr> 1 Wilson Soccer Ball Up-Front<hr> 50 coconuts a  week<hr></h4>
        <h2 class="target-label" id="theBigKahuna-heading">The Big Kahuna</h2>
+       <h3 class="description" id="theBigKahuna-intro">If your tech issues make you go WHOA, you need THE BIG KAHUNA. If you need enterprise-level 24/7 support with on-site specialists, this is the package for you.</h3>
+       <h4 class="pricingDescription">Kahuna Pricing<hr> 1 Palm frond lean-to for on-site support<hr> Steady supply of potable water<hr>Bananas as-needed<hr>5 President Masks <small>(Don't Ask Why)</small></h4>
+       <div id="Namaste" class="description"><strong>Even if you don't hire us, we send out regular bits and bytes of daily wisdom. Namaste.</strong></div>
     </main>
 
-    <footer id="footer">
+    <footer class="footer" id="footer">
 
       <form id="form" action="https.freecodecamp.com/email-submit" method="post" enctype="text/plain">
 
         <fieldset id="signUpFieldSet">
           <legend>Gain Technological Enlightment</legend>
-           <p>Even if you don't hire us. We send out regular bits and bytes of daily wisdom. Namaste.</p>
+
           <label id="email-label" for="email">
           <input id="email" type="email" name="email" minlength="5" size="25" inputmode="email" autocomplete="email" placeholder="Sign Up For Daily Wisdom">
           <input id="submit" type="submit" value="Begin">
@@ -137,5 +172,7 @@
         </fieldset>
       </form>
     </footer>
+
   </body>
+
 </html>
