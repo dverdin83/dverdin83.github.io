@@ -38,6 +38,10 @@
 
         visibility: hidden;
       }
+      pre {
+        background-color: #999999;
+        margin: 0;
+      }
     @media only screen and (min-width: 726px) {
       nav {
         height: 100%;
@@ -76,21 +80,58 @@
         <header>
           <div class="spacing"></div>
           <h2>Introduction</h2>
-            <p>
-            The purpose of this technical document is to give a high-level comparison between Javascript and C#. Both languages have their merits and shine in different use cases. The aim is giving the reader a place to begin researching the topic an point them towards further avenues of inquiry.
-            </p>
-            <h3>Brief Language History:</h3>
-            <ul>
-              <li><strong>Javascript</strong> has humble origins. It was written in 10 days by a programmer at Netscape many years ago. Netscape as a company doesn't exist now, but the achievments of netscape live on in the mozilla foundation and firefox browser. Javascript was originally used to do basic web scripts and annoying pop-up ads. Javascript has since blossomed into a leading programming language used in apps and many other use cases.</li>
-              <li><strong>C#</strong>, pronounced <em>c sharp</em>, is a product of Microsoft.</li>
-            </ul>
         </header>
+        <p>
+        The purpose of this technical document is to give a high-level comparison between Javascript and C#. Both languages have their merits and shine in different use cases. The aim is giving the reader a place to begin researching the topic an point them towards further avenues of inquiry.
+        </p>
+        <h3>Brief Language History:</h3>
+        <ul>
+          <li><strong>Javascript</strong> has humble origins. It was written in 10 days by a programmer at Netscape many years ago. Netscape as a company doesn't exist now, but the achievments of netscape live on in the mozilla foundation and firefox browser. Javascript was originally used to do basic web scripts and annoying pop-up ads. Javascript has since blossomed into a leading programming language used in apps and many other use cases.</li>
+          <li><strong>C#</strong>, pronounced <em>c sharp</em>, is a product of Microsoft. It was developed in 2000 as a general-purpose language. C# borrows from many different language design principles, especially Java. C# is used in a variety of applications from game development to web apps which can have cross-plaform functionality using Xamarin tool aquired by Microsoft.</li>
+        </ul>
+        <h3>Hello World code examples:</h3>
+        <strong>C#:</strong>
+      <pre>
+        <code>
+            // A Hello World! program in C#.
+            using System;
+            namespace HelloWorld
+            {
+              class Hello<
+              {
+                static void Main()<
+                {
+                  Console.WriteLine("Hello World!");
+                // Keep the console window open in debug mode.
+                  Console.WriteLine("Press any key to exit.");
+                  Console.ReadKey();
+                }
+              }
+            }
+
+        </code>
+      </pre>
+      <strong>Javascript:</strong>
+      <pre>
+        <code>
+            //This code prints to console and creates a pop up alert with an ok in a web browser.
+            console.log("Hello, World!");
+            alert("Hello, World!");
+        </code>
+      </pre>
       </section>
       <section class="main-section" id="Compilation">
         <header>
           <div class="spacing"></div>
           <h2>Compilation</h2>
         </header>
+          <p>
+            In the past, Javascript was more strictly an interpreted language. While C# was built from the beginning to be a compiled language.
+          </p>
+          <p>
+            Just-In-Time(<em>JITS</em>) compilers now exist which compile Javascript into machine-code in web browsers for instance.
+          </p>
+
       </section>
 
       <section class="main-section" id="Typing">
@@ -98,12 +139,56 @@
           <div class="spacing"></div>
           <h2>Typing</h2>
         </header>
+          <p>C# is a statically and strongly typed language. It can make it a little harder for new programmers to get started and just jump in. However, C#'s strong typing helps new and veteran programmers alike develop good programming habits. C# isn't as forgiving as Javascript.</p>
+          <p>With some restrictions, C# does allow some flexibility with implicitly typed local variables, but it isn't like the 'wild west' of Javascript.</p>
+          <p>Javascript is a dynamically typed language, which gives some flexibility, especially for smaller projects. Javascript's dynamic typing, while increasing flexibility, can also make debugging harder, and allow bugs to creep in where C# will not allow it.</p>
+          <h3>Variable Declaration Code Examples:</h3>
+          <strong>Javascript:</strong>
+          <pre>
+            <code>
+              //notice the lack of ints floats and other designations that you might see in C# or Java when declaring variables.
+              var nameFruit = "banana";
+              var quantity = 12;
+              var isYellow = true;
+              var weight = 2.2;
+              var unit = 'Oz'; // '' denotes string not char in JS unlike strongly typed
+            </code>
+          </pre>
+          <strong>C#:</strong>
+          <pre>
+            <code>
+              //please not for this to be compiled you would need using statements, a namespace, and a main function like so:
+              using System;
+
+              namespace variablesFruit {
+                class Program {
+                  static void Main(args) {
+                    //Variable Declariations
+                    string nameFruit;
+                    int quantity;
+                    bool isYellow;
+                    double weight;
+                    char unit;
+
+                    nameFruit = "banana"; // string initialized
+                    quantity = 12; // integer initialized
+                    isYellow = true; // boolean initialized
+                    weight = 2.2; //double float point initialized
+                    unit = 'O' //char
+
+                    //A one line declaration as an alternative:
+                    string nameFruit = "Strawberry";
+                }
+              }
+            }
+            </code>
+          </pre>
       </section>
 
       <section class="main-section" id="Components">
         <header>
           <div class="spacing"></div>
-          <h2>Components & Libraries</h2>
+          <h2>Components</h2>
         </header>
       </section>
 
@@ -134,7 +219,10 @@
             <a href="https://www.engadget.com/2014/05/10/history-of-netscape/" target="_blank">History of Netscape</a>
           </li>
           <li>
-            <a href="https://medium.com/sololearn/why-is-c-among-the-most-popular-programming-languages-in-the-world-ccf26824ffcb">Why is c among the most popular programming languages in the world</a>
+            <a href="https://medium.com/sololearn/why-is-c-among-the-most-popular-programming-languages-in-the-world-ccf26824ffcb">Why is C# among the most popular programming languages in the world</a>
+          </li>
+          <li>
+            <a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program">Hello World your first C# program</a>
           </li>
         </ul>
       </section>
