@@ -11,16 +11,18 @@
   body {
     background: linen;
     font-family: helvetica;
+    padding-bottom: 600px;
   }
     nav {
       font-size: 18px;
       background: #99dfff;
       position: fixed;
       width: 100%;
-      height: 120px;
+      height: auto;
       margin: 0;
       top: 0;
       left: 0;
+      padding: 5px;
       overflow-x: hidden;
 
     }
@@ -42,6 +44,12 @@
       padding: 2px 5px;
       border-style: solid;
       border-width: 1px;
+    }
+    ul.navlist li a:hover:not(.active) {
+      background-color: linen;
+    }
+    ul.navlist li a.active {
+      background-color: linen;
     }
 
     main {
@@ -87,6 +95,13 @@
         top: 0;
         margin-top: 10px;
         margin-left: 160px;
+      }
+      .spacing {
+
+        height: 5px;
+        margin-top: 5px;
+
+        visibility: hidden;
       }
         }
   </style>
@@ -187,7 +202,7 @@ var unit = 'Oz'; // '' denotes string not char in JS unlike strongly typed
           <strong>C#:</strong>
           <pre>
             <code>
-//please not for this to be compiled you would need using statements, a namespace, and a main function like so:
+//please note for this to be compiled you would need using statements, a namespace, and a main function like so:
 using System;
 namespace variablesFruit {
   class Program {
@@ -252,7 +267,7 @@ self.addEventListener('message', function(e) {
         </header>
         <p>Javascript does not natively support function overloading. C# allows function overloading natively. You can name functions the same name as long as they have different signatures or number of parameters.</p>
         <p>Function overloading is central to many Object-Oriented programming languages, Javascript has limitations in this area.</p>
-        <p>There are some workarounds in Javascript to mimic the OOP concept of function overloading, but the example provided below isn't overloading in the true sense</p>
+        <p>There are some workarounds in Javascript to mimic the OOP concept of function overloading. The example provided below isn't overloading in the true sense, but it's clever.</p>
         <strong>Function Overloading Workaround in Javascript:</strong>
         <pre>
           <code>
@@ -300,7 +315,7 @@ sum(1, 2, 5, 6, 67, 8, 8); //Calling function with multiple parameters
           </code>
         </pre>
         <em class="sources">Source: Member Overloading from Microsoft Documentation</em>
-        <p>C#'s native overloading support is a big help for productivity and reusability.</p>
+        <p>C#'s native overloading support is a big help for productivity and reusability. JS is flexible and scrappy.</p>
       </section>
 
       <section class="main-section" id="References">
@@ -338,7 +353,7 @@ sum(1, 2, 5, 6, 67, 8, 8); //Calling function with multiple parameters
           </li>
         </ul>
       </section>
-    
+
     </main>
 
   </body>
