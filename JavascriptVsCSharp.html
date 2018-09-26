@@ -22,11 +22,12 @@
       top: 0;
       left: 0;
       overflow-x: hidden;
-      align-items: center;
+
     }
 
     main {
       margin-top: 100px;
+
     }
       .nav-link {
       text-decoration: none;
@@ -40,7 +41,15 @@
       }
       pre {
         background-color: #999999;
-        margin: 0;
+        white-space: pre-wrap;
+        margin-bottom: 10px;
+        max-height: 550px;
+        overflow: auto;
+        padding: 10px;
+        width: auto;
+      }
+      .sources {
+        font-size: .5em;
       }
     @media only screen and (min-width: 726px) {
       nav {
@@ -93,9 +102,9 @@
         <strong>C#:</strong>
       <pre>
         <code>
-            // A Hello World! program in C#.
-            using System;
-            namespace HelloWorld
+// A Hello World! program in C#.
+using System;
+namespace HelloWorld
             {
               class Hello<
               {
@@ -146,41 +155,40 @@
           <strong>Javascript:</strong>
           <pre>
             <code>
-              //notice the lack of ints floats and other designations that you might see in C# or Java when declaring variables.
-              var nameFruit = "banana";
-              var quantity = 12;
-              var isYellow = true;
-              var weight = 2.2;
-              var unit = 'Oz'; // '' denotes string not char in JS unlike strongly typed
+//notice the lack of ints floats and other designations that you might see in C# or Java when declaring variables.
+var nameFruit = "banana";
+var quantity = 12;
+var isYellow = true;
+var weight = 2.2;
+var unit = 'Oz'; // '' denotes string not char in JS unlike strongly typed
             </code>
           </pre>
           <strong>C#:</strong>
           <pre>
             <code>
-              //please not for this to be compiled you would need using statements, a namespace, and a main function like so:
-              using System;
+//please not for this to be compiled you would need using statements, a namespace, and a main function like so:
+using System;
+namespace variablesFruit {
+  class Program {
+      static void Main(args) {
+    //Variable Declariations
+          string nameFruit;
+          int quantity;
+          bool isYellow;
+          double weight;
+          char unit;
 
-              namespace variablesFruit {
-                class Program {
-                  static void Main(args) {
-                    //Variable Declariations
-                    string nameFruit;
-                    int quantity;
-                    bool isYellow;
-                    double weight;
-                    char unit;
+          nameFruit = "banana"; // string initialized
+          quantity = 12; // integer initialized
+          isYellow = true; // boolean initialized
+          weight = 2.2; //double float point initialized
+          unit = 'O' //char
 
-                    nameFruit = "banana"; // string initialized
-                    quantity = 12; // integer initialized
-                    isYellow = true; // boolean initialized
-                    weight = 2.2; //double float point initialized
-                    unit = 'O' //char
-
-                    //A one line declaration as an alternative:
-                    string nameFruit = "Strawberry";
-                }
-              }
+    //A one line declaration as an alternative:
+          string nameFruit = "Strawberry";
             }
+          }
+        }
             </code>
           </pre>
       </section>
@@ -190,6 +198,9 @@
           <div class="spacing"></div>
           <h2>Components</h2>
         </header>
+        <p>Javascript and C# use various components and libraries to query data.</p>
+        <p>Javascript has various seperate libraries one can use to work with data</p>
+        <p>C# has a native .NET component called LINQ which works with many different databases and frameworks.</p>
       </section>
 
       <section class="main-section" id="Threading">
@@ -197,6 +208,20 @@
           <div class="spacing"></div>
           <h2>Threading</h2>
         </header>
+        <p>C# can natively run multple threads. Javascript was built as a single-thread language.</p>
+        <p>There are ways to work around Javascripts limitations with respect to multithreading using "web workers"</p>
+        <strong>Here is a code JS snippet of a web worker in action:</strong>
+        <pre>
+        <code>
+// worker.js
+self.addEventListener('message', function(e) {
+  var message = e.data + 'to myself!';
+  self.postMessage(message);
+  self.close();
+}
+        </code>
+        </pre>
+      <em class="sources">Source: From Max Peng on Medium (check out appropriate links om the <a href="#References">references section</a> for more information on web workers.)</em>
       </section>
 
       <section class="main-section" id="Overloading">
@@ -204,6 +229,57 @@
           <div class="spacing"></div>
           <h2>Overloading</h2>
         </header>
+        <p>Javascript does not natively support function overloading. C# allows function overloading natively. You can name functions the same name as long as they have different signatures or number of parameters.</p>
+        <p>Function overloading is central to many Object-Oriented programming languages, Javascript has limitations in this area.</p>
+        <p>There are some workarounds in Javascript to mimic the OOP concept of function overloading, but the example provided below isn't overloading in the true sense</p>
+        <strong>Function Overloading Workaround in Javascript:</strong>
+        <pre>
+          <code>
+
+function sum() {
+  var msg = 0;
+//function parameters are actually stored as an array-like structure called arguments.
+//The arguments object is automatically available inside any function
+//We can get the legth of arguments
+//if we don't pass any parameter, then below code executed arguments.lengh ==0
+if (arguments.length == 0) {
+    msg = "You haven't passed any parameters<br/>";
+    document.write(msg);
+  }
+//if we pass single parameter, then the arguments length is 1
+else if (arguments.length == 1) {
+  msg = "Please pass atleast two parameters<br/>";
+  document.write(msg);
+} else {
+  var result = 0;
+  var len = arguments.length;
+//since arguments acts like an array, we can loop through it.
+for (i = 0; i < len; i++) {
+    result = result + arguments[i];
+  }
+  document.write(result + "<br/>");
+  }
+}
+sum(); //Calling function with no parameters
+sum(1); //Calling function with one parameters
+sum(1, 8); //Calling function with two parameters
+sum(1, 2, 5, 6, 67, 8, 8); //Calling function with multiple parameters
+          </code>
+        </pre>
+        <em class="sources">Source: Vipin Sharma via c-sharpcorner.com</em>
+        <p><strong>C# Method Overloading snippet from Microsoft Docs:</strong></p>
+        <pre>
+          <code>
+            public static class Console {
+    public void WriteLine();
+    public void WriteLine(string value);
+    public void WriteLine(bool value);
+    ...
+}
+          </code>
+        </pre>
+        <em class="sources">Source: Member Overloading from Microsoft Documentation</em>
+        <p>C#'s native overloading support is a big help for productivity and reusability.</p>
       </section>
 
       <section class="main-section" id="References">
@@ -223,6 +299,21 @@
           </li>
           <li>
             <a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program">Hello World your first C# program</a>
+          </li>
+          <li>
+            <a href="http://www.tutorialsteacher.com/linq/what-is-linq">What is LINQ</a>
+          </li>
+          <li>
+            <a href="https://medium.com/techtrument/multithreading-javascript-46156179cf9a">"Multithreading" Javascript (using web workers)</a>
+          </li>
+          <li>
+            <a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/threading/">Microsoft C# Threading Documentation</a>
+          </li>
+          <li>
+            <a href="https://www.c-sharpcorner.com/blogs/function-overloading-in-javascript">function overloading in javascript (workarounds not true overloading)</a>
+          </li>
+          <li>
+            <a href="https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/member-overloading">C# Member Overloading</a>
           </li>
         </ul>
       </section>
